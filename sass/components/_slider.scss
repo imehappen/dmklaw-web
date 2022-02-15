@@ -1,0 +1,38 @@
+.slider {
+  position: relative;
+
+  align-self: stretch;
+  display: flex;
+  list-style-type: none;
+  width: 100%;
+  background-color: green;
+  // overflow: hidden;
+
+  &-item {
+    flex: 0 0 100%;
+    min-height: 80vh;
+    padding: $space-huge;
+    transition: transform cubic-bezier(0.17, 0.67, 0.95, 0) .2s;
+  }
+
+  &-control {
+    position: absolute;
+    align-self: flex-start;
+    padding: 2rem;
+    z-index: 2;
+    background-color: red;
+    color: white;
+    &:hover {
+      color: blue;
+    }
+
+    &--left {
+      top: 47%;
+      left: 2%;
+    }
+    &--right {
+      top: 47%;
+      right: 2%;
+    }
+  }
+}

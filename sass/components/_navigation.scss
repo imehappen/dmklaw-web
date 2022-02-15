@@ -1,0 +1,27 @@
+.navigation {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: $space-small;
+
+  &-item {
+    &:hover .navigation-link::after {
+      width: 100%;
+    }
+  }
+  &-link:link,
+  &-link:active {
+    color: $pri-color;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  &-link::after {
+    content: "";
+    display: block;
+    transform: translateY(0.4rem);
+    height: 1px;
+    width: 0px;
+    background-color: $pri-color;
+    transition: width 0.8s cubic-bezier(1, 0, 0, 1);
+  }
+}

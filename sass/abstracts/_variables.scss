@@ -1,0 +1,56 @@
+//  FONT SIZE > 8 10 14 16 18 24 32
+$font-tiny: 0.3rem;
+$font-smallest: 0.5rem;
+$font-small: 0.8rem;
+$font-normal: 1.6rem;
+$font-large: 2rem;
+$font-largest: 2.5rem;
+$font-huge: 4rem;
+
+//  PADDING & MARGIN > 10 15 20 30 50
+
+$space-tiny: 0.5rem;
+$space-smallest: 1.5rem;
+$space-small: 2.5rem;
+$space-normal: 3.5rem;
+$space-large: 4.5rem;
+$space-largest: 5rem;
+$space-huge: 8rem;
+
+//  COLORS
+$pri-color: #212c62;
+$sec-color: #7f1416;
+
+$grey-color-1: #f2f2f2;
+$grey-color-2: #d9d9d9;
+$grey-color-3: #4d4d4d;
+
+$pri-color-light-1: #e9eaef;
+$pri-color-light-2: #d3d5e0;
+$pri-color-light-3: #bcc0d0;
+
+$pri-color-dark-1: #19214a;
+$pri-color-dark-2: #05070f;
+$pri-color-dark-3: #080b19;
+
+$sec-color-light-1: #dfc4c5;
+$sec-color-light-2: #8c2b2d;
+
+$sec-color-dark-1: #330809;
+$sec-color-dark-2: #5f0f11;
+
+//  SHADOWS
+$shadow-1: 0 0 2rem rgba(0, 0, 0, 0.05);
+$shadow-2: 0 0 5rem rgba(0, 0, 0, 0.1);
+
+//  BORDERS
+$border-1: 1px solid $grey-color-1;
+$border-2: 1px solid $pri-color-light-3;
+//  BREAKPOINTS
+$bp-tiny: 30em;
+$bp-smallest: 40em;
+$bp-small: 50em;
+$bp-normal: 60em;
+$bp-large: 70em;
+$bp-largest: 80em;
+$bp-huge: 90em;

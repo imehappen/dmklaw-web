@@ -1,0 +1,39 @@
+.header {
+  background-color: $pri-color-light-3;
+  min-height: 80vw;
+  padding: $space-small $space-largest;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+.section {
+  &-about {
+    background-color: $pri-color;
+    min-height: 50vh;
+    padding: $space-largest;
+  }
+  &-team {
+    background-color: $pri-color-light-2;
+    min-height: 50vh;
+    padding: $space-largest;
+  }
+  &-services {
+    background-color: $sec-color-light-2;
+    min-height: 50vh;
+    padding: $space-largest;
+  }
+}
+.footer {
+  background-color: $pri-color-dark-2;
+  min-height: 50vh;
+  padding: $space-largest;
+}

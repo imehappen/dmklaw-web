@@ -1,0 +1,41 @@
+.search-form {
+  flex: 0 0 30%;
+  &-input {
+    padding: $space-tiny $space-normal;
+    border: none;
+    box-shadow: none;
+    border-radius: $space-normal;
+    margin-left: -$space-large;
+    border: $border-1;
+    width: 90%;
+
+    transition: all 0.2s;
+
+    &:focus {
+      width: 100%;
+      outline: none;
+      border: $border-1;
+      box-shadow: $shadow-1;
+    }
+
+    &::placeholder {
+      transition: all 0.5s;
+    }
+    &:focus::placeholder {
+      transform: translateX(15.5rem);
+      opacity: 0;
+    }
+  }
+  &-button {
+    transform: translateX(-15.5rem);
+    border: none;
+    background: none;
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  &-input:focus ~ &-button {
+    transform: translateX(-3rem);
+    opacity: 1;
+    cursor: pointer;
+  }
+}

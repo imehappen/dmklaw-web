@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Lawfirm back end and front end : API",
+  "main": "./public/js/index.js",
+  "scripts": {
+    "watch_sass": "node-sass sass/main.scss css/style.css -w",
+    "server": "live-server --entry-file='./public/index.html'",
+    "start": "npm-run-all --parallel watch_sass server",
+    "compile_sass": "node-sass sass/main.scss css/style.compiled.css",
+    "concat_css": "concat -o css/style.concatinated.css css/style.compiled.css",
+    "prefix_css": "postcss --use autoprefixer -b 'last 10 versions' css/style.concatinated.css -o css/style.prefixed.css",
+    "compress_css": "node-sass css/style.prefixed.css css/style.css --output-style compressed",
+    "build_css": "npm-run-all compile_sass concat_css prefix_css compress_css"
+  },
+  "keywords": [
+    "RESTAPI",
+    "MUSA",
+    "Imehappen"
+  ],
+  "author": "musa gabriel",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.6",
+    "postcss-cli": "^9.1.0"
+  }
+}
