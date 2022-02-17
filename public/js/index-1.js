@@ -97,6 +97,13 @@ sliderState.rightControl.addEventListener("click", () => {
 });
 
 //-------------------------------------------------------------------
+
+setInterval(() => {
+  action("L");
+}, 5000);
+
+//-------------------------------------------------------------------
+
 function action(direction) {
   sliderState.left = true;
   sliderState = cloneSlide(sliderState);
