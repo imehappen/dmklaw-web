@@ -2,7 +2,7 @@
 let slider = document.querySelector(".slider");
 let slides = document.querySelectorAll(".slider-item");
 
-// slider.style.transform = "scale(.4)";
+slider.style.transform = "scale(.2)";
 
 const leftControl = document.querySelector(".slider-control--left");
 const rightControl = document.querySelector(".slider-control--right");
@@ -12,6 +12,7 @@ const rightControl = document.querySelector(".slider-control--right");
 let sliderState = {
   parent: slider,
   distance: 0,
+  length: slides.length,
   direction: null,
   leftControl,
   rightControl,
@@ -21,12 +22,12 @@ let sliderState = {
   edited: null,
   clonedLeft: null,
   clonedRight: null,
-  transition: false,
-  lastSlide: null,
-  firstSlide: null,
+  transition: true,
+  slidesToMove: "edited",
+  lastSlide: slides[slides.length - 1],
+  firstSlide: slides[0],
   index: 0,
   offset: 100,
-  length: null,
 };
 
 //-------------------------------------------------------------------
@@ -57,7 +58,9 @@ const cloneSlide = (state) => {
   state.original = state.parent.querySelectorAll(".slider-item");
   const length = state.original.length - 1;
   const first = state.original[0].cloneNode(true);
+  first.setAttribute("name", "first");
   const last = state.original[length].cloneNode(true);
+  last.setAttribute("name", "last");
 
   if (!state.clonedLeft && state.left) {
     state.clonedLeft = true;
@@ -66,19 +69,20 @@ const cloneSlide = (state) => {
 
   if (!state.clonedRight && state.right) {
     state.clonedRight = true;
-    state.parent.prepend(last);
+    state.parent.append(first);
   }
 
   state.edited = state.parent.querySelectorAll(".slider-item");
   state.length = state.edited.length;
   state.lastSlide = state.edited[state.length - 1];
+  state.firstSlide = state.edited[0];
   return state;
 };
 
 //-------------------------------------------------------------------
 // must set index to be remove in state
 const removeNode = (state) => {
-  state.slides = state.parent.querySelectorAll(".slider-item");
+  state.edited = state.parent.querySelectorAll(".slider-item");
   state.parent.removeChild(state.edited[state.index]);
 };
 
@@ -98,29 +102,32 @@ sliderState.rightControl.addEventListener("click", () => {
 
 //-------------------------------------------------------------------
 
-setInterval(() => {
-  action("L");
-}, 5000);
+// setInterval(() => {
+//   action("L");
+// }, 5000);
 
 //-------------------------------------------------------------------
 
 function action(direction) {
-  sliderState.left = true;
-  sliderState = cloneSlide(sliderState);
-
+  console.log(sliderState);
   sliderState.slidesToMove = "edited";
+  sliderState.transition = true;
 
   if (direction === "L") {
     sliderState.direction = "L";
+    sliderState.left = true;
+    sliderState = cloneSlide(sliderState);
+    sliderState.left = null;
   }
   if (direction === "R") {
     sliderState.direction = "R";
+    sliderState.right = true;
   }
 
-  sliderState.transition = true;
-  moveSlides(sliderState);
-
   if (direction === "L") {
+    sliderState.slidesToMove = "original";
+    moveSlides(sliderState);
+
     if (sliderState.distance === -(sliderState.length - 1)) {
       sliderState.lastSlide.addEventListener("transitionend", () => {
         sliderState.index = sliderState.length - 1;
@@ -131,8 +138,28 @@ function action(direction) {
         sliderState.distance = 1;
         moveSlides(sliderState);
       });
+    } else {
+      sliderState = cloneSlide(sliderState);
+      sliderState.right = null;
     }
   }
   if (direction === "R") {
+    if (sliderState.distance === 0) {
+      sliderState.parent.style.flexDirection = "row-reverse";
+      sliderState = cloneSlide(sliderState);
+    }
+    moveSlides(sliderState);
+
+    if (sliderState.distance === sliderState.length - 1) {
+      sliderState.lastSlide.addEventListener("transitionend", () => {
+        sliderState.index = sliderState.length - 1;
+        removeNode(sliderState);
+        sliderState.clonedRight = null;
+        sliderState.transition = null;
+        sliderState.parent.style.flexDirection = "row";
+        sliderState.distance = -1;
+        moveSlides(sliderState);
+      });
+    }
   }
 }
