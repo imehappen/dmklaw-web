@@ -2,7 +2,7 @@
 let slider = document.querySelector(".slider");
 let slides = document.querySelectorAll(".slider-item");
 
-slider.style.transform = "scale(.2)";
+// slider.style.transform = "scale(.2)";
 
 const leftControl = document.querySelector(".slider-control--left");
 const rightControl = document.querySelector(".slider-control--right");
@@ -74,6 +74,22 @@ sliderState.leftControl.addEventListener("click", () => {
 sliderState.rightControl.addEventListener("click", () => {
   sliderState.direction = "R";
   action(sliderState);
+});
+
+let slidetime = setInterval(() => {
+  sliderState.direction = "L";
+  action(sliderState);
+}, 6000);
+
+slider.addEventListener("mouseenter", () => clearInterval(slidetime));
+
+slider.addEventListener("mouseleave", () => {
+  sliderState.direction === "L"
+    ? (sliderState.direction = "R")
+    : (sliderState.direction = "L");
+  slidetime = setInterval(() => {
+    action(sliderState);
+  }, 6000);
 });
 
 //-------------------------------------------------------------------

@@ -1,8 +1,8 @@
 .header {
   background-color: $pri-color-light-3;
-  min-height: 80vw;
+  // min-height: 80vw;
   padding: $space-small $space-largest;
-
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

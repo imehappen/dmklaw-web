@@ -3,12 +3,10 @@
 
   align-self: stretch;
   display: flex;
-
   justify-content: flex-start;
   list-style-type: none;
   flex: 0 0 100%;
-  background-color: $pri-color-dark-1;
-  // overflow: hidden;
+  overflow: hidden;
 
   &-item {
     flex: 0 0 100%;
@@ -28,12 +26,12 @@
     }
 
     &--left {
-      top: 47%;
-      left: 2%;
+      top: 45%;
+      left: -2%;
     }
     &--right {
-      top: 47%;
-      right: 2%;
+      top: 45%;
+      right: -2%;
     }
   }
 }
