@@ -43,51 +43,20 @@ function moveSlides(state) {
   state.direction === "R" && state.distance++;
   state.direction === "L" && state.distance--;
   if (state.distance < -5 || state.distance > 0) return;
+
   console.log(state.distance);
-  // let distance = Math.abs(state.distance);
 
-  if (state.slides[Math.abs(state.distance)].id === state.firstClone.id) {
-    const first = state.firstClone;
-
-    first.addEventListener(
-      "transitionend",
-      () => {
-        console.log(state.firstClone.id);
-        state.distance = 0;
-        state.direction = "L";
-        state.transition = false;
-        moveSlides(state);
-        state.transition = true;
-      },
-      { once: true }
-    );
-  }
-
-  if (state.slides[Math.abs(state.distance)].id === state.lastClone.id) {
-    const last = state.lastClone;
-
-    last.addEventListener(
-      "transitionend",
-      () => {
-        console.log(state.lastClone.id);
-        state.distance = 0;
-        state.direction = "L";
-        state.transition = false;
-        moveSlides(state);
-        state.transition = true;
-      },
-      { once: true }
-    );
-  }
+  monitorSlides(state);
 
   for (let [i, slide] of state.slides.entries()) {
     const yesTrans = "transform cubic-bezier(1,0,0,1) 1s";
     const noTrans = "none";
 
-    if (!slide["id"]) slide.id = i;
+    const transition = state.transition;
+    const allowTransition = () => (slide.style.transition = yesTrans);
+    const disallowTransition = () => (slide.style.transition = noTrans);
 
-    (state.transition && (slide.style.transition = yesTrans)) ||
-      (slide.style.transition = noTrans);
+    (transition && allowTransition()) || disallowTransition();
 
     slide.style.transform = `translateX(${state.distance * state.offset}%)`;
   }
@@ -107,7 +76,51 @@ sliderState.rightControl.addEventListener("click", () => {
   action(sliderState);
 });
 
+//-------------------------------------------------------------------
+// HELPERS
+//-------------------------------------------------------------------
+
 function action(state) {
-  console.log("moving to: ", state.direction);
   moveSlides(state);
 }
+
+//-------------------------------------------------------------------
+
+function resetSlider(state, newDistance) {
+  console.log(newDistance);
+  state.distance = newDistance;
+  state.direction = "L";
+  state.transition = false;
+  moveSlides(state);
+  state.transition = true;
+}
+
+//-------------------------------------------------------------------
+
+function monitorSlides(state) {
+  if (state.slides[Math.abs(state.distance)].id === state.lastClone.id) {
+    console.log("left end", state.slides.length);
+    const last = state.lastClone;
+    const length = state.slides.length;
+
+    last.addEventListener(
+      "transitionend",
+      resetSlider.bind(null, state, -(length - 3)),
+      {
+        once: true,
+      }
+    );
+  }
+
+  if (state.slides[Math.abs(state.distance)].id === state.firstClone.id) {
+    console.log("right end");
+    const first = state.firstClone;
+    const length = state.slides.length;
+
+    first.addEventListener("transitionend", resetSlider.bind(this, state, 0), {
+      once: true,
+    });
+  }
+}
+
+//-------------------------------------------------------------------
