@@ -11,7 +11,8 @@
   &-item {
     flex: 0 0 100%;
     min-height: 80vh;
-    padding: $space-huge;
+    background-color: rgb(35, 147, 155);
+    padding: $space-large $space-huge;
   }
 
   &-control {
@@ -27,11 +28,11 @@
 
     &--left {
       top: 45%;
-      left: -2%;
+      left: 0;
     }
     &--right {
       top: 45%;
-      right: -2%;
+      right: 0;
     }
   }
 }

@@ -44,8 +44,6 @@ function moveSlides(state) {
   state.direction === "L" && state.distance--;
   if (state.distance < -5 || state.distance > 0) return;
 
-  console.log(state.distance);
-
   monitorSlides(state);
 
   for (let [i, slide] of state.slides.entries()) {
@@ -103,7 +101,6 @@ function action(state) {
 //-------------------------------------------------------------------
 
 function resetSlider(state, newDistance) {
-  console.log(newDistance);
   state.distance = newDistance;
   state.direction = "L";
   state.transition = false;
@@ -115,7 +112,6 @@ function resetSlider(state, newDistance) {
 
 function monitorSlides(state) {
   if (state.slides[Math.abs(state.distance)].id === state.lastClone.id) {
-    console.log("left end", state.slides.length);
     const last = state.lastClone;
     const length = state.slides.length;
 
@@ -129,7 +125,6 @@ function monitorSlides(state) {
   }
 
   if (state.slides[Math.abs(state.distance)].id === state.firstClone.id) {
-    console.log("right end");
     const first = state.firstClone;
     const length = state.slides.length;
 
@@ -140,3 +135,8 @@ function monitorSlides(state) {
 }
 
 //-------------------------------------------------------------------
+
+const header = document.querySelector(".header");
+const sliderBox = document.querySelector(".slider");
+const navHeight = header.querySelector("nav").getBoundingClientRect().height;
+sliderBox.style.marginTop = `${navHeight}px`;
