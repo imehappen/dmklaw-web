@@ -1,0 +1,36 @@
+.highlights {
+  flex: 1;
+  justify-content: space-between;
+  background-color: $sec-color;
+  color: aliceblue;
+  padding: $space-large;
+
+  // overflow: scroll;
+
+  &-items {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0 0 80%;
+
+    gap: 5%;
+  }
+  &-item {
+    flex: 0 0 18%;
+    background-color: $grey-color-1;
+    box-shadow: $shadow-1;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
+
+  &--heading {
+    flex: 0 0 20%;
+    background-color: none;
+    margin-bottom: auto;
+  }
+}

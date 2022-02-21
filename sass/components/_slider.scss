@@ -2,17 +2,48 @@
   position: relative;
 
   align-self: stretch;
+  flex: 0 0 70%;
   display: flex;
   justify-content: flex-start;
+
   list-style-type: none;
-  flex: 0 0 100%;
+
   overflow: hidden;
 
   &-item {
-    flex: 0 0 100%;
+    min-width: 100%;
     min-height: 80vh;
-    background-color: rgb(35, 147, 155);
+    &-1 {
+      background-image: linear-gradient(
+          rgba($pri-color-light-1, 0.966),
+          rgba($pri-color-light-2, 0.904)
+        ),
+        url("../../public/images/buildings-205986_1920.jpg");
+    }
+    &-2 {
+      background-image: linear-gradient(
+          rgba($pri-color-light-1, 0.966),
+          rgba($pri-color-light-2, 0.904)
+        ),
+        url("../../public/images/books-2463779_1920.jpg");
+    }
+    &-3 {
+      background-image: linear-gradient(
+          rgba($pri-color-light-1, 0.966),
+          rgba($pri-color-light-2, 0.904)
+        ),
+        url("../../public/images/court-5665992_1920.jpg");
+    }
+    &-4 {
+      background-image: linear-gradient(
+          rgba($pri-color-light-1, 0.966),
+          rgba($pri-color-light-2, 0.904)
+        ),
+        url("../../public/images/office-581131_1920.jpg");
+    }
+
     padding: $space-large $space-huge;
+    background-size: cover;
   }
 
   &-control {
@@ -20,19 +51,64 @@
     align-self: flex-start;
     padding: 2rem;
     z-index: 2;
-    background-color: red;
+    // background-color: red;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
       color: blue;
     }
+    transition: all 0.2s;
 
     &--left {
-      top: 45%;
-      left: 0;
+      top: 38%;
+      left: 2%;
+
+      &:hover {
+        transform: translateX(0.4rem) scale(1.03);
+      }
+      &:active {
+        transform: scale(1.01);
+      }
     }
     &--right {
-      top: 45%;
-      right: 0;
+      top: 38%;
+      right: 2%;
+
+      &:hover {
+        transform: translateX(-0.4rem) scale(1.03);
+      }
+      &:active {
+        transform: scale(1.01);
+      }
+    }
+    &-icons {
+      height: $space-small;
+      width: $space-small;
+      fill: rgba($pri-color-light-3, 0.9);
+    }
+  }
+  &-content {
+    height: 100%;
+    text-align: center;
+  }
+
+  &-texts {
+    flex: 0 0 100%;
+    height: 100%;
+    gap: $space-normal;
+
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-around;
+
+    // background-color: #fff;
+    h1 {
+      color: $pri-color;
+      font-size: $font-size-huge;
+      // background-color: #fff;
+      text-transform: uppercase;
     }
   }
 }

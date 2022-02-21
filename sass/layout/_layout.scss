@@ -12,7 +12,7 @@
   nav {
     position: fixed;
     width: 100%;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,6 +20,7 @@
     padding: $space-small $space-largest;
     align-self: stretch;
     background-color: $grey-color-1;
+    border-bottom: 1px solid $pri-color-light-2;
   }
 }
 .section {
@@ -43,4 +44,8 @@
   background-color: $pri-color-dark-2;
   min-height: 50vh;
   padding: $space-largest;
+}
+.summary {
+  flex: 0 0 100%;
+  display: flex;
 }

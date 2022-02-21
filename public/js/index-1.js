@@ -137,6 +137,8 @@ function monitorSlides(state) {
 //-------------------------------------------------------------------
 
 const header = document.querySelector(".header");
-const sliderBox = document.querySelector(".slider");
 const navHeight = header.querySelector("nav").getBoundingClientRect().height;
-sliderBox.style.marginTop = `${navHeight}px`;
+
+const summaryBox = document.querySelector(".summary");
+
+summaryBox.style.marginTop = `${navHeight}px`;
