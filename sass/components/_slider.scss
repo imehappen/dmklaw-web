@@ -13,6 +13,10 @@
   &-item {
     min-width: 100%;
     min-height: 80vh;
+    user-select: none;
+    padding: $space-large $space-huge;
+    background-size: cover;
+
     &-1 {
       background-image: linear-gradient(
           rgba($pri-color-light-1, 0.966),
@@ -41,9 +45,6 @@
         ),
         url("../../public/images/office-581131_1920.jpg");
     }
-
-    padding: $space-large $space-huge;
-    background-size: cover;
   }
 
   &-control {
@@ -51,7 +52,6 @@
     align-self: flex-start;
     padding: 2rem;
     z-index: 2;
-    // background-color: red;
     color: white;
     display: flex;
     justify-content: center;
@@ -90,24 +90,22 @@
     }
   }
   &-content {
-    height: 100%;
+    min-height: 100%;
     text-align: center;
   }
 
   &-texts {
-    flex: 0 0 100%;
-    height: 100%;
+    // flex: 1 1 100%;
+    min-height: 100%;
+    max-width: 100%;
     gap: $space-normal;
 
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
 
-    // background-color: #fff;
     h1 {
       color: $pri-color;
       font-size: $font-size-huge;
-      // background-color: #fff;
       text-transform: uppercase;
     }
   }

@@ -1,11 +1,11 @@
 .highlights {
   flex: 1;
   justify-content: space-between;
-  background-color: $sec-color;
+  background-color: $pri-color-light-2;
   color: aliceblue;
   padding: $space-large;
 
-  // overflow: scroll;
+  overflow: scroll;
 
   &-items {
     list-style: none;

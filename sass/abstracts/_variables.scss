@@ -8,7 +8,6 @@ $font-size-largest: 3.5rem;
 $font-size-huge: 6rem;
 
 //  PADDING & MARGIN > 10 15 20 30 50
-
 $space-tiny: 0.5rem;
 $space-smallest: 1.5rem;
 $space-small: 2.5rem;
@@ -41,11 +40,12 @@ $sec-color-dark-2: #5f0f11;
 
 //  SHADOWS
 $shadow-1: 0 0 2rem rgba(0, 0, 0, 0.05);
-$shadow-2: 0 0 5rem rgba(0, 0, 0, 0.1);
+$shadow-2: 0 0 5rem rgba(0, 0, 0, 0.05);
 
 //  BORDERS
 $border-1: 1px solid $grey-color-1;
 $border-2: 1px solid $pri-color-light-3;
+
 //  BREAKPOINTS
 $bp-tiny: 30em;
 $bp-smallest: 40em;

@@ -40,6 +40,7 @@ sliderState.transition = true;
 //============================================================================
 
 function moveSlides(state) {
+  console.log(performance.now());
   state.direction === "R" && state.distance++;
   state.direction === "L" && state.distance--;
   if (state.distance < -5 || state.distance > 0) return;
