@@ -1,0 +1,83 @@
+.navigation {
+  &-icon-bg:hover &-icon,
+  &-icon-bg:hover &-icon::before,
+  &-icon-bg:hover &-icon::after {
+    background-color: $grey-color-1;
+  }
+
+  &-icon {
+    &-bg {
+      position: fixed;
+      top: 2rem;
+      right: 4rem;
+      z-index: 15;
+      height: 4.1rem;
+      width: 5rem;
+      border-radius: 10%;
+      border: 0.2rem solid $pri-color;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $pri-color;
+      }
+    }
+
+    transition: width 0.2s 0.1s;
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: $space-small;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    height: 2px;
+    width: 3rem;
+    background-color: $pri-color;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      background-color: $pri-color;
+      height: 100%;
+      width: 3rem;
+      position: absolute;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+      right: 0;
+    }
+    &::after {
+      top: 0.8rem;
+      right: 0;
+    }
+
+    &-opened.navigation-icon {
+      background-color: transparent;
+    }
+
+    &-opened.navigation-icon::before,
+    &-opened.navigation-icon::after {
+      top: 0;
+    }
+    &-opened.navigation-icon::before {
+      transform: rotate(45deg);
+    }
+    &-opened.navigation-icon::after {
+      transform: rotate(-45deg);
+    }
+  }
+  &-icon-bg-opened.navigation-icon-bg:hover &-icon {
+    background-color: transparent;
+  }
+  &-icon-bg-opened.navigation-icon-bg:hover &-icon::before,
+  &-icon-bg-opened.navigation-icon-bg:hover &-icon::after {
+    background-color: $pri-color;
+  }
+  &-icon-bg-opened.navigation-icon-bg:hover {
+    background-color: transparent;
+  }
+}

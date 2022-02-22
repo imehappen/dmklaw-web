@@ -143,3 +143,13 @@ const navHeight = header.querySelector("nav").getBoundingClientRect().height;
 const summaryBox = document.querySelector(".summary");
 
 summaryBox.style.marginTop = `${navHeight}px`;
+
+const iconBg = document.querySelector(".navigation-icon-bg");
+const navIcon = document.querySelector(".navigation-icon");
+const navigationBox = document.querySelector(".navigation");
+
+iconBg.addEventListener("click", () => {
+  navIcon.classList.toggle("navigation-icon-opened");
+  iconBg.classList.toggle("navigation-icon-bg-opened");
+  navigationBox.classList.toggle("navigation-opened");
+});

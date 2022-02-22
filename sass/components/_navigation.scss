@@ -1,71 +1,22 @@
 .navigation {
-  background-color: $pri-color;
+  height: 100vh;
+  width: 0;
   list-style: none;
   position: absolute;
   top: 0;
   right: 0;
-  min-height: 100vh;
-  min-width: 20vw;
-  padding: 5rem;
-  color: $grey-color-1;
+  background-color: rgba($grey-color-2, 0.9);
+  text-align: center;
 
-  &-icon-foreground {
-    position: fixed;
-    top: 3.3rem;
-    right: 5rem;
-    z-index: 15;
-    height: 1.8rem;
-    width: 3rem;
-  }
-
-  &-icon-foreground:hover ~ &-icon::after {
-    transform: translateY(1px);
-  }
-  &-icon-foreground:hover ~ &-icon::before {
-    transform: translateY(-1px);
-  }
-  &-icon-foreground:hover ~ &-icon {
-    width: 4rem;
-  }
-
-  &-icon {
-    transition: width 0.2s 0.1s;
-    display: flex;
-    list-style: none;
-    flex-wrap: wrap;
-    gap: $space-small;
-    position: fixed;
-    top: 4.1rem;
-    right: 5rem;
-    height: 2px;
-    width: 3rem;
-    background-color: $grey-color-1;
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      background-color: inherit;
-      height: 100%;
-      width: 3rem;
-      position: absolute;
-      transition: all 0.2s;
-    }
-
-    &::before {
-      top: -0.8rem;
-      right: 0;
-    }
-    &::after {
-      top: 0.8rem;
-      right: 0;
-    }
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s;
 
   &-item {
-    &:hover .navigation-link::after {
-      width: 100%;
-    }
+    // flex: 1;
+    // background-color: #fff;
+    padding: 2rem 5rem;
   }
 
   &-link:link,
@@ -73,16 +24,9 @@
     color: inherit;
     text-decoration: none;
     text-transform: uppercase;
-    background-color: rgb(128, 49, 49);
   }
+}
 
-  &-link::after {
-    content: "";
-    display: block;
-    transform: translateY(0.4rem);
-    height: 1px;
-    width: 0px;
-    background-color: $pri-color;
-    transition: width 0.2s cubic-bezier(1, 0, 0, 1);
-  }
+.navigation.navigation-opened {
+  width: 20vw;
 }
