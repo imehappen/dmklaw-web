@@ -1,18 +1,18 @@
 // use strict
-let slider = document.querySelector(".slider");
-let slides = document.querySelectorAll(".slider-item");
+let slider = document.querySelector('.slider');
+let slides = document.querySelectorAll('.slider-item');
 
-// slider.style.transform = "scale(.2)";
+const leftControl = document.querySelector('.slider-control--left');
+const rightControl = document.querySelector('.slider-control--right');
 
-const leftControl = document.querySelector(".slider-control--left");
-const rightControl = document.querySelector(".slider-control--right");
+// slider.style.transform = 'scale(.2)';
 
 //-----STATE---------------------------------------------------------
 
 let sliderState = {
   parent: slider,
   distance: 0,
-  direction: "L",
+  direction: 'L',
   leftControl,
   rightControl,
   transition: false,
@@ -21,18 +21,19 @@ let sliderState = {
   sliderLength: undefined,
   firstClone: slides[0].cloneNode(true),
   lastClone: slides[slides.length - 1].cloneNode(true),
+  isDragging: null,
 };
 
 //============================================================================
 
-sliderState.firstClone.id = "first-clone";
-sliderState.lastClone.id = "last-clone";
+sliderState.firstClone.id = 'first-clone';
+sliderState.lastClone.id = 'last-clone';
 
 slider.append(sliderState.firstClone);
 slider.prepend(sliderState.lastClone);
 
-sliderState.slides = sliderState.parent.querySelectorAll(".slider-item");
-sliderState.sliderLength = sliderState.slides.length - 1;
+sliderState.slides = sliderState.parent.querySelectorAll('.slider-item');
+sliderState.sliderLength = sliderState.slides.length;
 
 moveSlides(sliderState);
 sliderState.transition = true;
@@ -40,16 +41,19 @@ sliderState.transition = true;
 //============================================================================
 
 function moveSlides(state) {
-  console.log(performance.now());
-  state.direction === "R" && state.distance++;
-  state.direction === "L" && state.distance--;
-  if (state.distance < -5 || state.distance > 0) return;
+  state.direction === 'R' && state.distance++;
+  state.direction === 'L' && state.distance--;
+
+  console.log(state);
+
+  if (state.distance < -state.sliderLength + 1 || state.distance > 0) return;
 
   monitorSlides(state);
 
   for (let [i, slide] of state.slides.entries()) {
-    const yesTrans = "transform cubic-bezier(1,0,0,1) 1s";
-    const noTrans = "none";
+    if (!slide['id']) slide.id = i;
+    const yesTrans = 'transform cubic-bezier(1,0,0,1) 1s';
+    const noTrans = 'none';
 
     const transition = state.transition;
     const allowTransition = () => (slide.style.transition = yesTrans);
@@ -65,30 +69,14 @@ function moveSlides(state) {
 // EVENTS
 //-------------------------------------------------------------------
 
-sliderState.leftControl.addEventListener("click", () => {
-  sliderState.direction = "L";
+sliderState.leftControl.addEventListener('click', () => {
+  sliderState.direction = 'L';
   action(sliderState);
 });
 
-sliderState.rightControl.addEventListener("click", () => {
-  sliderState.direction = "R";
+sliderState.rightControl.addEventListener('click', () => {
+  sliderState.direction = 'R';
   action(sliderState);
-});
-
-let slidetime = setInterval(() => {
-  sliderState.direction = "L";
-  action(sliderState);
-}, 6000);
-
-slider.addEventListener("mouseenter", () => clearInterval(slidetime));
-
-slider.addEventListener("mouseleave", () => {
-  sliderState.direction === "L"
-    ? (sliderState.direction = "R")
-    : (sliderState.direction = "L");
-  slidetime = setInterval(() => {
-    action(sliderState);
-  }, 6000);
 });
 
 //-------------------------------------------------------------------
@@ -98,12 +86,12 @@ slider.addEventListener("mouseleave", () => {
 function action(state) {
   moveSlides(state);
 }
-
 //-------------------------------------------------------------------
 
 function resetSlider(state, newDistance) {
   state.distance = newDistance;
-  state.direction = "L";
+  console.log(newDistance);
+  state.direction = 'L';
   state.transition = false;
   moveSlides(state);
   state.transition = true;
@@ -113,12 +101,15 @@ function resetSlider(state, newDistance) {
 
 function monitorSlides(state) {
   if (state.slides[Math.abs(state.distance)].id === state.lastClone.id) {
-    const last = state.lastClone;
-    const length = state.slides.length;
+    const last = state.slides[Math.abs(state.distance)];
 
+    const length = -(state.sliderLength - 3);
     last.addEventListener(
-      "transitionend",
-      resetSlider.bind(null, state, -(length - 3)),
+      'transitionend',
+      () => {
+        console.log('at', state.firstClone.id);
+        resetSlider(state, length);
+      },
       {
         once: true,
       }
@@ -127,29 +118,55 @@ function monitorSlides(state) {
 
   if (state.slides[Math.abs(state.distance)].id === state.firstClone.id) {
     const first = state.firstClone;
-    const length = state.slides.length;
-
-    first.addEventListener("transitionend", resetSlider.bind(this, state, 0), {
-      once: true,
-    });
+    first.addEventListener(
+      'transitionend',
+      () => {
+        console.log('at', state.firstClone.id);
+        resetSlider(state, 0);
+      },
+      {
+        once: true,
+      }
+    );
   }
 }
 
-//-------------------------------------------------------------------
+//----------------------  menu-logic ---------------------------
 
-const header = document.querySelector(".header");
-const navHeight = header.querySelector("nav").getBoundingClientRect().height;
+const header = document.querySelector('.header');
+const navHeight = header.querySelector('nav').getBoundingClientRect().height;
 
-const summaryBox = document.querySelector(".summary");
+const sliderBox = document.querySelector('.slider');
 
-summaryBox.style.marginTop = `${navHeight}px`;
+sliderBox.style.marginTop = `${navHeight}px`;
 
-const iconBg = document.querySelector(".navigation-icon-bg");
-const navIcon = document.querySelector(".navigation-icon");
-const navigationBox = document.querySelector(".navigation");
+const iconBg = document.querySelector('.navigation-icon-bg');
+const navIcon = document.querySelector('.navigation-icon');
+const navigationBox = document.querySelector('.navigation');
 
-iconBg.addEventListener("click", () => {
-  navIcon.classList.toggle("navigation-icon-opened");
-  iconBg.classList.toggle("navigation-icon-bg-opened");
-  navigationBox.classList.toggle("navigation-opened");
+iconBg.addEventListener('click', () => {
+  navIcon.classList.toggle('navigation-icon-opened');
+  iconBg.classList.toggle('navigation-icon-bg-opened');
+  navigationBox.classList.toggle('navigation-opened');
 });
+
+
+const mapBoxToken =
+  'pk.eyJ1IjoiaW1laGFwcGVuIiwiYSI6ImNsMDRiY2FjbjBhazIza253dnl0NHB2eGQifQ.dyLCD3knk54JWcKFZeDNiw';
+
+mapboxgl.accessToken = mapBoxToken;
+const map = new mapboxgl.Map({
+  container: 'map', // container ID
+  // style: 'mapbox://styles/imehappen/ckvk26izmi2ld15qqbmo497i5', // satelite
+  style: 'mapbox://styles/imehappen/cl057lc3e000m14oar6dx6588', // monochromatic
+  center: [36.82391043431036, -1.284907040275034], // 
+  
+  zoom: 14, 
+});
+
+// Create a new marker.
+const marker = new mapboxgl.Marker({
+  color: '#7f1416',
+})
+  .setLngLat([36.82391043431036, -1.284907040275034])
+  .addTo(map);

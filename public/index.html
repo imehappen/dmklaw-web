@@ -18,31 +18,37 @@
 
     <link rel="stylesheet" href="./public/css/style.css" />
     <title>DMK Law Advocates</title>
-    
-    
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+
   <body>
     <header class="header">
       <nav>
         <div class="logo-box">
-          <img
-            src="../public/images/dmk law logo-02.svg"
-            alt="DMK law logo"
-            class="logo"
-          />
+          <a href="#"
+            ><img
+              src="../public/images/dmk-law-logo3.svg"
+              alt="DMK law logo"
+              class="logo"
+          /></a>
         </div>
-        <form action="" class="search-form">
-          <input
-            type="text"
-            placeholder="&#128269;"
-            class="search-form-input"
-          /><button class="search-form-button">&#128269;</button>
-        </form>
+
+        <!-- <form action="" class="search-form">
+          <input type="text" class="search-form-input" />
+          <button class="search-form-button">&#128269;</button>
+        </form> -->
 
         <ul class="navigation">
-        <div class="navigation-icon-bg"><div class="navigation-icon"></div></div>
-        
+          <div class="navigation-icon-bg">
+            <li class="navigation-icon"></li>
+          </div>
 
-           <li class="navigation-item">
+          <li class="navigation-item">
             <a href="#" class="navigation-link">services</a>
           </li>
           <li class="navigation-item">
@@ -56,21 +62,33 @@
           </li>
           <li class="navigation-item">
             <a href="#" class="navigation-link">contacts</a>
-          </li> 
-
+          </li>
+          <!-- <li class="navigation-item">
+            <a href="#" class="navigation-link">sign up</a>
+          </li>
+          <li class="navigation-item">
+            <a href="#" class="navigation-link">login</a>
+          </li> -->
         </ul>
       </nav>
 
-<div class="summary">
-  <ul class="slider">
-        <li class="slider-control slider-control--left"><svg class="slider-control-icons">
-          <use xlink:href="./public/images/sprite-icons.svg#icon-arrow-left"></use>
-        </svg></li>
-        <li class="slider-control slider-control--right"><svg class="slider-control-icons">
-          <use xlink:href="./public/images/sprite-icons.svg#icon-arrow-right"></use>
-        </svg></li>
+      <ul class="slider">
+        <li class="slider-control slider-control--left">
+          <svg class="slider-control-icons">
+            <use
+              xlink:href="./public/images/sprite-icons.svg#icon-arrow-left"
+            ></use>
+          </svg>
+        </li>
+        <li class="slider-control slider-control--right">
+          <svg class="slider-control-icons">
+            <use
+              xlink:href="./public/images/sprite-icons.svg#icon-arrow-right"
+            ></use>
+          </svg>
+        </li>
 
-        <li class="slider-item slider-item-1">
+        <li draggable="true" class="slider-item slider-item-1">
           <div class="slider-content">
             <div class="slider-texts">
               <h1 class="slider-heading">Professionalism</h1>
@@ -80,12 +98,12 @@
                 totam quisquam voluptatum voluptatibus accusantium alias dolore
                 minima nemo veniam vitae! Culpa, possimus.
               </h4>
-              <a href="" class="button">click here</a>
+              <a href="" class="button">Talk to us &raquo;</a>
             </div>
           </div>
         </li>
 
-        <li class="slider-item slider-item-2">
+        <li draggable="true" class="slider-item slider-item-2">
           <div class="slider-content">
             <div class="slider-texts">
               <h1 class="slider-heading">Integrity</h1>
@@ -95,12 +113,12 @@
                 totam quisquam voluptatum voluptatibus accusantium alias dolore
                 minima nemo veniam vitae! Culpa, possimus.
               </h4>
-              <a href="" class="button">click here</a>
+              <a href="" class="button">Talk to us &raquo;</a>
             </div>
           </div>
         </li>
 
-        <li class="slider-item slider-item-3">
+        <li draggable="true" class="slider-item slider-item-3">
           <div class="slider-content">
             <div class="slider-texts">
               <h1 class="slider-heading">Innovation</h1>
@@ -110,12 +128,12 @@
                 totam quisquam voluptatum voluptatibus accusantium alias dolore
                 minima nemo veniam vitae! Culpa, possimus.
               </h4>
-              <a href="" class="button">click here</a>
+              <a href="" class="button">Talk to us &raquo;</a>
             </div>
           </div>
         </li>
 
-        <li class="slider-item slider-item-4">
+        <li draggable="true" class="slider-item slider-item-4">
           <div class="slider-content">
             <div class="slider-texts">
               <h1 class="slider-heading">Client-Centric</h1>
@@ -125,32 +143,280 @@
                 totam quisquam voluptatum voluptatibus accusantium alias dolore
                 minima nemo veniam vitae! Culpa, possimus.
               </h4>
-              <a href="" class="button">click here</a>
+              <a href="" class="button">Talk to us &raquo;</a>
             </div>
           </div>
         </li>
       </ul>
-      <!-- <div class="highlights">
-        <h3 class="highlight-heading">Sneakpeeks</h3>
-        <ul class="highlights-items">
-        <li class="highlights-item ">hightlight 1</li>
-        <li class="highlights-item">hightlight 2</li>
-        <li class="highlights-item">hightlight 3</li>
-        <li class="highlights-item">hightlight 4</li>
-      </ul>
-    </div> -->
-  
-  
-  </div>
-      
     </header>
+
     <main class="main">
-      <section class="section-about">Section about</section>
-      <section class="section-team">section-team</section>
-      <section class="section-services">Section services</section>
+      <section class="section-about">
+        <div class="margin-bottom-large section-head">
+          <svg class="section-icon margin-right-normal">
+            <use
+              xlink:href="./public/images/sprite-icons.svg#icon-hammer2"
+            ></use>
+          </svg>
+          <h2 class="section-heading">about us</h2>
+        </div>
+        <div class="section-content">
+          <img
+            src="/public/images/buildings-205986_1920.jpg"
+            class="section-image"
+          />
+
+          <div class="section-text">
+            DMK LAW ADVOCATES LLP is a progressive full service law firm that
+            offers a wide range of high quality legal services to our clients.
+            With a team of lawyers who are widely recognized in various areas of
+            practice with a wealth of experience accumulated over several years
+            of private legal practice; we are committed to providing simplified,
+            practical and innovative legal services that are client-centric and
+            result oriented.
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-color-pri-dark-1 section-team padding-top-huge padding-bottom-huge"
+      >
+        <div class="margin-bottom-large section-head">
+          <svg class="fill-color-sec-light-1 section-icon margin-right-normal">
+            <use xlink:href="./public/images/sprite-icons.svg#icon-users"></use>
+          </svg>
+          <h2 class="txt-color-grey-1 section-heading">our team</h2>
+        </div>
+        <div class="section-content">
+          <div class="section-text">
+            DMK LAW ADVOCATES LLP is a progressive full service law firm that
+            offers a wide range of high quality legal services to our clients.
+            With a team of lawyers who are widely recognized in various areas of
+            practice with a wealth of experience accumulated over several years
+            of private legal practice; we are committed to providing simplified,
+            practical and innovative legal services that are client-centric and
+            result oriented.
+          </div>
+          <img
+            src="/public/images/buildings-205986_1920.jpg"
+            class="section-image"
+          />
+        </div>
+      </section>
+
+      <!-- ### -->
+      <!-- section services -->
+      <section
+        class="padding-top-huge padding-bottom-huge bg-color-pri-light-1 section-services"
+      >
+        <div class="margin-bottom-large section-head">
+          <svg class="fill-color-sec section-icon margin-right-normal">
+            <use xlink:href="./public/images/sprite-icons.svg#icon-users"></use>
+          </svg>
+          <h2 class="txt-color-pri section-heading">services</h2>
+        </div>
+
+        <div class="services-container">
+          <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div>
+
+          <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div>
+
+          <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div>
+
+          <!-- <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div>
+
+          <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div>
+
+          <div class="bg-color-grey-1 services-items">
+            <img
+              src="../public/images/buildings-205986_1920.jpg"
+              alt=""
+              class="services-image"
+            />
+          </div> -->
+        </div>
+      </section>
+
+      <section class="section-contacts">
+        <div class="margin-bottom-large section-head">
+          <svg class="fill-color-pri-light-3 section-icon margin-right-normal">
+            <use
+              xlink:href="./public/images/sprite-icons.svg#icon-location"
+            ></use>
+          </svg>
+          <h2 class="section-heading">Contact us</h2>
+        </div>
+
+        <div class="contacts-container">
+          <div class="contacts contacts-map">
+            <h3 class="form-heading">We are located here</h3>
+            <div id="map"></div>
+          </div>
+          <div class="contacts contacts-form">
+            <h3 class="form-heading">Contact us now by filling here</h3>
+            <form action="#">
+              <div class="form-group">
+                <label class="form-label" for="name">name</label
+                ><input class="form-input" id="'name" type="text" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="name">email</label
+                ><input class="form-input" id="'email" type="email" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="name">phone</label
+                ><input class="form-input" id="'name" type="tel" />
+              </div>
+              <div class="form-group">
+                <input class="form-submit" id="'name" type="submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="footer">footer</footer>
+    <footer class="footer bg-color-pri-dark-2">
+      <!-- location and contact us details -->
+
+      <!-- ### -->
+      <!-- footer links and summaries -->
+      <div class="footer-container">
+        <div class="footer-item footer-item-left">
+          <div class="padding-top-small padding-bottom-small footer-item-logo">
+            <svg class="footer-logo">
+              <use xlink:href="../dmk-law-logo.svg#logo"></use>
+            </svg>
+          </div>
+          <div class="footer-item-profile">
+            Corner House 8th Floor, Suite No. 807, Kimathi Street P.O. Box 27774
+            – 00100, Nairobi Kenya,<br />
+            Tel: 0202148300, Cell: 0720 637 107,<br />
+            E-mail: info@dmklaws.co.ke, dmklaws@gmail.com
+          </div>
+        </div>
+        <!-- links -->
+        <div class="footer-item footer-item-centre">
+          <div class="padding-top-normal padding-bottom-normal footer-heading">
+            useful links
+          </div>
+          <ul class="footer-navigation-links">
+            <li class="footer-item-link">
+              <a href="" class="footer-link-navigation">Home</a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-navigation">Services</a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-navigation">Insights</a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-navigation">Team</a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-navigation">Contacts</a>
+            </li>
+          </ul>
+        </div>
+        <!-- social media -->
+        <div class="footer-item footer-item-right">
+          <div class="padding-top-normal padding-bottom-small footer-heading">
+            We are on social media
+          </div>
+          <ul class="footer-item-links">
+            <li class="footer-item-link">
+              <a href="#" class="footer-link-social">
+                <svg class="footer-icon">
+                  <use
+                    xlink:href="./public/images/sprite-icons.svg#icon-facebook"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-social">
+                <svg class="footer-icon">
+                  <use
+                    xlink:href="./public/images/sprite-icons.svg#icon-twitter"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-social">
+                <svg class="footer-icon">
+                  <use
+                    xlink:href="./public/images/sprite-icons.svg#icon-instagram"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-social">
+                <svg class="footer-icon">
+                  <use
+                    xlink:href="./public/images/sprite-icons.svg#icon-telegram"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+            <li class="footer-item-link">
+              <a href="" class="footer-link-social">
+                <svg class="footer-icon">
+                  <use
+                    xlink:href="./public/images/sprite-icons.svg#icon-facebook"
+                  ></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- copy right info -->
+      <div class="footer-item-copyright">
+        copyright &copy; DMK Law advocates LLP 2022
+      </div>
+    </footer>
     <script src="../public/js/index-1.js"></script>
-  </head>
   </body>
 </html>
+
+<!-- 
+<div class="highlights">
+        <h3 class="highlight-heading">Sneakpeeks</h3>
+        <ul class="highlights-items">
+          <li class="highlights-item">hightlight 1</li>
+          <li class="highlights-item">hightlight 2</li>
+          <li class="highlights-item">hightlight 3</li>
+          <li class="highlights-item">hightlight 4</li>
+        </ul>
+      </div> -->

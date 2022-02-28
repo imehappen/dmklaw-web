@@ -1,0 +1,34 @@
+.section {
+  &-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-icon {
+    height: 2.5rem;
+    width: 2.5rem;
+    fill: $sec-color;
+  }
+
+  &-heading {
+    text-transform: capitalize;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-image {
+    flex: 0 0 50%;
+    width: 50%;
+    display: block;
+    object-fit: cover;
+  }
+  &-text {
+    flex: 0 0 50%;
+    background-color: #fff;
+    padding: $space-large;
+  }
+}

@@ -1,0 +1,157 @@
+// text colors
+
+.txt-color-pri {
+  color: $pri-color !important;
+}
+.txt-color-sec {
+  color: $sec-color !important;
+}
+
+.txt-color-grey-1 {
+  color: $grey-color-1 !important;
+}
+.txt-color-grey-2 {
+  color: $grey-color-2 !important;
+}
+.txt-color-grey-3 {
+  color: $grey-color-3 !important;
+}
+
+.txt-color-pri-light-1 {
+  color: $pri-color-light-1 !important;
+}
+.txt-color-pri-light-2 {
+  color: $pri-color-light-2 !important;
+}
+.txt-color-pri-light-3 {
+  color: $pri-color-light-3 !important;
+}
+
+.txt-color-pri-dark-1 {
+  color: $pri-color-dark-1 !important;
+}
+.txt-color-pri-dark-2 {
+  color: $pri-color-dark-2 !important;
+}
+.txt-color-pri-dark-3 {
+  color: $pri-color-dark-3 !important;
+}
+
+.txt-color-sec-light-1 {
+  color: $sec-color-light-1 !important;
+}
+.txt-color-sec-light-2 {
+  color: $sec-color-light-2 !important;
+}
+
+.txt-color-sec-dark-1 {
+  color: $sec-color-dark-1 !important;
+}
+.txt-color-sec-dark-2 {
+  color: $sec-color-dark-2 !important;
+}
+
+//=====backgrounds
+.bg-color-pri {
+  background-color: $pri-color !important;
+}
+.bg-color-sec {
+  background-color: $sec-color !important;
+}
+
+.bg-color-grey-1 {
+  background-color: $grey-color-1 !important;
+}
+.bg-color-grey-2 {
+  background-color: $grey-color-2 !important;
+}
+.bg-color-grey-3 {
+  background-color: $grey-color-3 !important;
+}
+
+.bg-color-pri-light-1 {
+  background-color: $pri-color-light-1 !important;
+}
+.bg-color-pri-light-2 {
+  background-color: $pri-color-light-2 !important;
+}
+.bg-color-pri-light-3 {
+  background-color: $pri-color-light-3 !important;
+}
+
+.bg-color-pri-dark-1 {
+  background-color: $pri-color-dark-1 !important;
+}
+.bg-color-pri-dark-2 {
+  background-color: $pri-color-dark-2 !important;
+}
+.bg-color-pri-dark-3 {
+  background-color: $pri-color-dark-3 !important;
+}
+
+.bg-color-sec-light-1 {
+  background-color: $sec-color-light-1 !important;
+}
+.bg-color-sec-light-2 {
+  background-color: $sec-color-light-2 !important;
+}
+
+.bg-color-sec-dark-1 {
+  background-color: $sec-color-dark-1 !important;
+}
+.bg-color-sec-dark-2 {
+  background-color: $sec-color-dark-2 !important;
+}
+
+//=====fills
+
+.fill-color-pri {
+  fill: $pri-color !important;
+}
+.fill-color-sec {
+  fill: $sec-color !important;
+}
+
+.fill-color-grey-1 {
+  fill: $grey-color-1 !important;
+}
+.fill-color-grey-2 {
+  fill: $grey-color-2 !important;
+}
+.fill-color-grey-3 {
+  fill: $grey-color-3 !important;
+}
+
+.fill-color-pri-light-1 {
+  fill: $pri-color-light-1 !important;
+}
+.fill-color-pri-light-2 {
+  fill: $pri-color-light-2 !important;
+}
+.fill-color-pri-light-3 {
+  fill: $pri-color-light-3 !important;
+}
+
+.fill-color-pri-dark-1 {
+  fill: $pri-color-dark-1 !important;
+}
+.fill-color-pri-dark-2 {
+  fill: $pri-color-dark-2 !important;
+}
+.fill-color-pri-dark-3 {
+  fill: $pri-color-dark-3 !important;
+}
+
+.fill-color-sec-light-1 {
+  fill: $sec-color-light-1 !important;
+}
+.fill-color-sec-light-2 {
+  fill: $sec-color-light-2 !important;
+}
+
+.fill-color-sec-dark-1 {
+  fill: $sec-color-dark-1 !important;
+}
+.fill-color-sec-dark-2 {
+  fill: $sec-color-dark-2 !important;
+}

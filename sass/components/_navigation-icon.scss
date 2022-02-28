@@ -8,12 +8,14 @@
   &-icon {
     &-bg {
       position: fixed;
-      top: 2rem;
+      top: 2.5rem;
       right: 4rem;
       z-index: 15;
-      height: 4.1rem;
-      width: 5rem;
-      border-radius: 10%;
+      height: 3.8rem;
+      width: 4rem;
+      border-radius: 0.3rem;
+      
+      transform: scale(.8);
       border: 0.2rem solid $pri-color;
       transition: all 0.2s;
 
@@ -32,7 +34,7 @@
     right: 50%;
     transform: translate(50%, -50%);
     height: 2px;
-    width: 3rem;
+    width: 65%;
     background-color: $pri-color;
 
     &::after,
@@ -41,7 +43,7 @@
       display: block;
       background-color: $pri-color;
       height: 100%;
-      width: 3rem;
+      width: 100%;
       position: absolute;
       transition: all 0.2s;
     }

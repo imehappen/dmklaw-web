@@ -14,8 +14,6 @@
   transition: all 0.3s;
 
   &-item {
-    // flex: 1;
-    // background-color: #fff;
     padding: 2rem 5rem;
   }
 
@@ -28,5 +26,6 @@
 }
 
 .navigation.navigation-opened {
-  width: 20vw;
+  width: 40vw;
+  backdrop-filter: blur(1rem);
 }

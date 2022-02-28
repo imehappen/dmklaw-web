@@ -1,0 +1,68 @@
+.form {
+  &-group {
+    width: 100%;
+    margin-bottom: $space-normal;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  &-heading {
+    padding: $space-small $space-small $space-large;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+
+    &-light {
+      color: $grey-color-1;
+    }
+
+    // &::before,
+    // &::after {
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   width: 10%;
+    //   height: 1px;
+    //   background-color: $grey-color-1;
+    // }
+    // &::before {
+    //   top: 35%;
+    //   left: -0%;
+    // }
+    // &::after {
+    //   top: 35%;
+    //   right: -0%;
+    // }
+  }
+
+  &-input {
+    flex: 0 0 85%;
+    outline: none;
+    border: none;
+    padding: $space-smallest $space-small;
+    border-radius: $space-small;
+
+    &:focus {
+      box-shadow: $shadow-1;
+      outline: 2px solid $pri-color;
+    }
+  }
+  &-label {
+    font-size: $font-size-large;
+  }
+  &-submit {
+    outline: none;
+    border: none;
+    padding: $space-smallest $space-large;
+    border-radius: $space-small;
+    font-size: $font-size-normal;
+    margin-left: auto;
+  }
+}
+#map {
+  background-color: #fff;
+  // border-radius: $space-smallest;
+  height: 70%;
+}

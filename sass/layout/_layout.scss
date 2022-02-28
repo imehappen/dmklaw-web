@@ -1,12 +1,10 @@
 .header {
-  background-color: $pri-color-light-3;
-  // min-height: 80vw;
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  // align-items: stretch;
-  // gap: $space-largest;
+  justify-content: flex-start;
+
   position: relative;
 
   nav {
@@ -25,9 +23,9 @@
 }
 .section {
   &-about {
-    background-color: $pri-color;
+    background-color: $pri-color-light-1;
     min-height: 50vh;
-    padding: $space-largest;
+    padding: $space-huge $space-largest;
   }
   &-team {
     background-color: $pri-color-light-2;
@@ -35,18 +33,19 @@
     padding: $space-largest;
   }
   &-services {
-    background-color: $sec-color-light-2;
+    min-height: 50vh;
+    padding: $space-largest;
+  }
+  &-contacts {
+    background-color: $sec-color;
     min-height: 50vh;
     padding: $space-largest;
   }
 }
 .footer {
-  background-color: $pri-color-dark-2;
   min-height: 50vh;
-  padding: $space-largest;
-}
-.summary {
-  flex: 0 0 100%;
-  display: flex;
-  flex-wrap: wrap;
+  padding: $space-largest $space-largest $space-small $space-largest;
+  color: $grey-color-1;
+  text-align: center;
+  font-size: $font-size-smallest;
 }

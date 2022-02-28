@@ -1,0 +1,19 @@
+.contacts {
+  flex: 0 0 48%;
+  padding: $space-normal;
+
+  &-container {
+    display: flex;
+    justify-content: center;
+    min-width: 30rem;
+    gap: 1.5%;
+  }
+
+  &-map {
+    background-color: $grey-color-1;
+    border-radius: $space-smallest;
+  }
+  &-form {
+    color: $grey-color-1;
+  }
+}
