@@ -383,7 +383,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.3s; }
+  transition: all ease-in-out 0.3s; }
   .navigation-item {
     padding: 2rem 5rem; }
   .navigation-link:link, .navigation-link:active {
@@ -392,7 +392,7 @@ body {
     text-transform: uppercase; }
 
 .navigation.navigation-opened {
-  width: 40vw;
+  width: 25vw;
   backdrop-filter: blur(1rem); }
 
 .navigation-icon-bg:hover .navigation-icon,
@@ -427,7 +427,7 @@ body {
     .navigation-icon-bg:hover {
       background-color: #212c62; }
   .navigation-icon::after, .navigation-icon::before {
-    content: "";
+    content: '';
     display: block;
     background-color: #212c62;
     height: 100%;
@@ -508,13 +508,13 @@ body {
     padding: 6rem 16rem;
     background-size: cover; }
     .slider-item-1 {
-      background-image: linear-gradient(rgba(233, 234, 239, 0.966), rgba(211, 213, 224, 0.904)), url("../../public/images/buildings-205986_1920.jpg"); }
+      background-image: linear-gradient(rgba(233, 234, 239, 0.97), rgba(211, 213, 224, 0.97)), url("../../public/images/buildings-205986_1920.jpg"); }
     .slider-item-2 {
-      background-image: linear-gradient(rgba(233, 234, 239, 0.966), rgba(211, 213, 224, 0.904)), url("../../public/images/books-2463779_1920.jpg"); }
+      background-image: linear-gradient(rgba(233, 234, 239, 0.97), rgba(211, 213, 224, 0.97)), url("../../public/images/books-2463779_1920.jpg"); }
     .slider-item-3 {
-      background-image: linear-gradient(rgba(233, 234, 239, 0.966), rgba(211, 213, 224, 0.904)), url("../../public/images/court-5665992_1920.jpg"); }
+      background-image: linear-gradient(rgba(233, 234, 239, 0.97), rgba(211, 213, 224, 0.97)), url("../../public/images/court-5665992_1920.jpg"); }
     .slider-item-4 {
-      background-image: linear-gradient(rgba(233, 234, 239, 0.966), rgba(211, 213, 224, 0.904)), url("../../public/images/office-581131_1920.jpg"); }
+      background-image: linear-gradient(rgba(233, 234, 239, 0.97), rgba(211, 213, 224, 0.97)), url("../../public/images/office-581131_1920.jpg"); }
   .slider-control {
     position: absolute;
     align-self: flex-start;

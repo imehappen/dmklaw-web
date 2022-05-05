@@ -14,8 +14,8 @@
       height: 3.8rem;
       width: 4rem;
       border-radius: 0.3rem;
-      
-      transform: scale(.8);
+
+      transform: scale(0.8);
       border: 0.2rem solid $pri-color;
       transition: all 0.2s;
 
@@ -39,7 +39,7 @@
 
     &::after,
     &::before {
-      content: "";
+      content: '';
       display: block;
       background-color: $pri-color;
       height: 100%;
@@ -65,20 +65,25 @@
     &-opened.navigation-icon::after {
       top: 0;
     }
+
     &-opened.navigation-icon::before {
       transform: rotate(45deg);
     }
+
     &-opened.navigation-icon::after {
       transform: rotate(-45deg);
     }
   }
+
   &-icon-bg-opened.navigation-icon-bg:hover &-icon {
     background-color: transparent;
   }
+
   &-icon-bg-opened.navigation-icon-bg:hover &-icon::before,
   &-icon-bg-opened.navigation-icon-bg:hover &-icon::after {
     background-color: $pri-color;
   }
+
   &-icon-bg-opened.navigation-icon-bg:hover {
     background-color: transparent;
   }

@@ -5,7 +5,7 @@
   "main": "./public/js/index.js",
   "scripts": {
     "watch_sass": "node-sass sass/main.scss public/css/style.css -w",
-    "server": "live-server --entry-file='./public/index.html'",
+    "server": "live-server --entry-file=public/index.html",
     "start": "npm-run-all --parallel watch_sass server",
     "compile_sass": "node-sass sass/main.scss css/style.compiled.css",
     "concat_css": "concat -o css/style.concatinated.css css/style.compiled.css",

@@ -44,8 +44,6 @@ function moveSlides(state) {
   state.direction === 'R' && state.distance++;
   state.direction === 'L' && state.distance--;
 
-  console.log(state);
-
   if (state.distance < -state.sliderLength + 1 || state.distance > 0) return;
 
   monitorSlides(state);
@@ -79,6 +77,28 @@ sliderState.rightControl.addEventListener('click', () => {
   action(sliderState);
 });
 
+let autoSlide;
+
+const setOutoSlide = () => {
+  autoSlide = setInterval(() => {
+    sliderState.direction = 'L';
+    action(sliderState);
+  }, 5000);
+};
+
+setOutoSlide();
+
+// pause autoslider
+slider.onmouseenter = () => {
+  console.log('mouse enter');
+  clearInterval(autoSlide);
+};
+
+// resume autoslider
+slider.onmouseleave = () => {
+  console.log('mouse leave');
+  setOutoSlide();
+};
 //-------------------------------------------------------------------
 // HELPERS
 //-------------------------------------------------------------------
@@ -90,7 +110,6 @@ function action(state) {
 
 function resetSlider(state, newDistance) {
   state.distance = newDistance;
-  console.log(newDistance);
   state.direction = 'L';
   state.transition = false;
   moveSlides(state);
@@ -107,7 +126,6 @@ function monitorSlides(state) {
     last.addEventListener(
       'transitionend',
       () => {
-        console.log('at', state.firstClone.id);
         resetSlider(state, length);
       },
       {
@@ -121,7 +139,6 @@ function monitorSlides(state) {
     first.addEventListener(
       'transitionend',
       () => {
-        console.log('at', state.firstClone.id);
         resetSlider(state, 0);
       },
       {
@@ -150,7 +167,6 @@ iconBg.addEventListener('click', () => {
   navigationBox.classList.toggle('navigation-opened');
 });
 
-
 const mapBoxToken =
   'pk.eyJ1IjoiaW1laGFwcGVuIiwiYSI6ImNsMDRiY2FjbjBhazIza253dnl0NHB2eGQifQ.dyLCD3knk54JWcKFZeDNiw';
 
@@ -159,9 +175,9 @@ const map = new mapboxgl.Map({
   container: 'map', // container ID
   // style: 'mapbox://styles/imehappen/ckvk26izmi2ld15qqbmo497i5', // satelite
   style: 'mapbox://styles/imehappen/cl057lc3e000m14oar6dx6588', // monochromatic
-  center: [36.82391043431036, -1.284907040275034], // 
-  
-  zoom: 14, 
+  center: [36.82391043431036, -1.284907040275034], //
+
+  zoom: 14,
 });
 
 // Create a new marker.
