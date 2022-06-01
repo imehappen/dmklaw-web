@@ -1,31 +1,43 @@
 .navigation {
-  height: 100vh;
-  width: 0;
+  font-size: $font-size-smallest;
   list-style: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: rgba($grey-color-2, 0.9);
   text-align: center;
-
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: all ease-in-out 0.3s;
+
+  transition: all ease-in-out 0.2s;
+
+  @include respond("large") {
+    height: 100vh;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba($grey-color-2, 0.9);
+  }
 
   &-item {
-    padding: 2rem 5rem;
+    padding: 2rem 3rem;
   }
 
   &-link:link,
   &-link:active {
+    display: inline-block;
     color: inherit;
+    font-weight: 900;
     text-decoration: none;
     text-transform: uppercase;
+    transition: all ease-in-out 0.1s;
+  }
+
+  &-link:hover {
+    color: $sec-color;
+    transform: scale(1.03);
   }
 }
 
 .navigation.navigation-opened {
-  width: 25vw;
+  width: 80vw;
   backdrop-filter: blur(1rem);
 }

@@ -1,23 +1,25 @@
-@import './abstracts/variables';
+@import "./abstracts/variables";
+@import "./abstracts/mixins";
 
-@import './base/resets';
-@import './base/typography';
+@import "./base/resets";
+@import "./base/typography";
 
-@import './layout/layout';
-@import './layout/margins';
-@import './layout/paddings';
-@import './layout/colors';
+@import "./layout/layout";
+@import "./layout/margins";
+@import "./layout/paddings";
+@import "./layout/colors";
 
-@import './components/navigation';
-@import './components/navigation-icon';
-@import './components/search';
-@import './components/logo';
-@import './components/slider';
-@import './components/button';
-@import './components/hightlights';
-@import './components/services';
-@import './components/contacts';
-@import './components/form';
-@import './components/footer';
+@import "./components/navigation";
+@import "./components/navigation-icon";
+@import "./components/search";
+@import "./components/logo";
+@import "./components/slider";
+@import "./components/button";
+@import "./components/hightlights";
+@import "./components/services";
+@import "./components/contacts";
+@import "./components/form";
+@import "./components/footer";
+@import "./components/background-video";
 
-@import './pages/home';
+@import "./pages/home";

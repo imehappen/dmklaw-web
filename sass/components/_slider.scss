@@ -15,36 +15,36 @@
     min-width: 100%;
     user-select: none;
     padding: $space-large $space-huge;
-    background-size: cover;
+    // background-size: cover;
 
-    &-1 {
-      background-image: linear-gradient(
-          rgba($pri-color-light-1, 0.97),
-          rgba($pri-color-light-2, 0.97)
-        ),
-        url('../../public/images/buildings-205986_1920.jpg');
-    }
-    &-2 {
-      background-image: linear-gradient(
-          rgba($pri-color-light-1, 0.97),
-          rgba($pri-color-light-2, 0.97)
-        ),
-        url('../../public/images/books-2463779_1920.jpg');
-    }
-    &-3 {
-      background-image: linear-gradient(
-          rgba($pri-color-light-1, 0.97),
-          rgba($pri-color-light-2, 0.97)
-        ),
-        url('../../public/images/court-5665992_1920.jpg');
-    }
-    &-4 {
-      background-image: linear-gradient(
-          rgba($pri-color-light-1, 0.97),
-          rgba($pri-color-light-2, 0.97)
-        ),
-        url('../../public/images/office-581131_1920.jpg');
-    }
+    // &-1 {
+    //   background-image: linear-gradient(
+    //       rgba($pri-color-light-1, 0.97),
+    //       rgba($pri-color-light-2, 0.97)
+    //     ),
+    //     url("../../public/images/buildings-205986_1920.jpg");
+    // }
+    // &-2 {
+    //   background-image: linear-gradient(
+    //       rgba($pri-color-light-1, 0.97),
+    //       rgba($pri-color-light-2, 0.97)
+    //     ),
+    //     url("../../public/images/books-2463779_1920.jpg");
+    // }
+    // &-3 {
+    //   background-image: linear-gradient(
+    //       rgba($pri-color-light-1, 0.97),
+    //       rgba($pri-color-light-2, 0.97)
+    //     ),
+    //     url("../../public/images/court-5665992_1920.jpg");
+    // }
+    // &-4 {
+    //   background-image: linear-gradient(
+    //       rgba($pri-color-light-1, 0.97),
+    //       rgba($pri-color-light-2, 0.97)
+    //     ),
+    //     url("../../public/images/office-581131_1920.jpg");
+    // }
   }
 
   &-control {

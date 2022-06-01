@@ -1,4 +1,6 @@
 .header {
+  font-size: $font-size-normal;
+
   width: 100%;
 
   display: flex;
@@ -11,35 +13,36 @@
     position: fixed;
     width: 100%;
     z-index: 10;
+
+    background-color: $grey-color-1;
+
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    padding: $space-small $space-largest;
     align-self: stretch;
-    background-color: $grey-color-1;
+
+    padding: $space-small $space-largest;
     border-bottom: 1px solid $pri-color-light-2;
   }
 }
+.main > * {
+  min-height: 50vh;
+  padding: $space-largest;
+  font-size: $font-size-normal;
+}
+
 .section {
   &-about {
     background-color: $pri-color-light-1;
-    min-height: 50vh;
-    padding: $space-huge $space-largest;
   }
   &-team {
     background-color: $pri-color-light-2;
-    min-height: 50vh;
-    padding: $space-largest;
   }
   &-services {
-    min-height: 50vh;
-    padding: $space-largest;
   }
   &-contacts {
     background-color: $sec-color;
-    min-height: 50vh;
-    padding: $space-largest;
   }
 }
 .footer {

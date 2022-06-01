@@ -1,8 +1,18 @@
 .logo-box {
   align-self: center;
   margin-left: -5rem;
+  flex: 0 0 40%;
+
   .logo {
     display: block;
     height: 5rem;
+
+    @include respond("medium") {
+      height: 4rem;
+    }
+
+    @include respond("small") {
+      height: 3.5rem;
+    }
   }
 }
